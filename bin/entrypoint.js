@@ -47,9 +47,6 @@ if (!shxInstalled){
 }
 console.log("Scanning for errors...".cyan);
 const fixErrors = runCommand(fixAnyErrors);
-console.log(`run  cd ${folderName} && yarn start to get up and running, your development server will start at localhost:1234\n`);
-console.log("Happy Glass chewing!\n".rainbow);
-
 
 
 
