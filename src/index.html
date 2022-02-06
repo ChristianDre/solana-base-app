@@ -3,13 +3,38 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>solana-base-app</title>
+        <title>NFT Creater</title>
         <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
         <link rel="stylesheet" href="index.css" />
         <!-- Default styles that can be overridden by your app -->
         <!-- <link rel="stylesheet" href="npm:@solana/wallet-adapter-react-ui/styles.css" /> -->
     </head>
     <body>
+        <div id="canvas"></div>
+        <script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+        <script type="text/javascript">
+
+            const qrCode = new QRCodeStyling({
+                width: 300,
+                height: 300,
+                type: "svg",
+                data: "https://www.facebook.com/",
+                dotsOptions: {
+                    color: "#4267b2",
+                    type: "rounded"
+                },
+                backgroundOptions: {
+                    color: "#e9ebee",
+                },
+                imageOptions: {
+                    crossOrigin: "anonymous",
+                    margin: 20
+                }
+            });
+
+            qrCode.append(document.getElementById("canvas"));
+            qrCode.download({ name: "qr", extension: "svg" });
+        </script>
         <div id="app"></div>
         <script type="module" src="index.tsx"></script>
     </body>
